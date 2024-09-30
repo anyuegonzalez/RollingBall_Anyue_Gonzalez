@@ -15,7 +15,7 @@ public class MovimientoPlataforma : MonoBehaviour
     void Update()
     {
         transform.Translate(direccion = new Vector3(12, 0, 0) * velocidad * Time.deltaTime);
-        if (timer >= 0)
+        if (timer >= 1)
         {
             transform.Translate(direccion = new Vector3(12, 0, 0) * -1 * velocidad * Time.deltaTime);
             timer += 1 * Time.deltaTime;
