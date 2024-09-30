@@ -10,7 +10,7 @@ public class MovimientoPlataforma : MonoBehaviour
     [SerializeField] float timer = 0;
     void Start()
     {
-        
+       
     }
     void Update()
     {
