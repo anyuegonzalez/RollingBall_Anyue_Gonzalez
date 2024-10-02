@@ -5,13 +5,12 @@ using UnityEngine;
 public class Bola : MonoBehaviour
 {
 
-    [SerializeField] Vector3 direccion;
-    [SerializeField] Vector3 movimiento;
+    [SerializeField] Vector3 direccion = new Vector3(0,0,0);
     [SerializeField] float velocidad = 12f;
 
     void Start()
     {
-        movimiento.Normalize();
+
     }
 
    
@@ -19,6 +18,6 @@ public class Bola : MonoBehaviour
     {
         float h = Input.GetAxisRaw("Horizontal");
         float v = Input.GetAxisRaw("Vertical");
-        transform.Translate(direccion = new Vector3(0, 0, 0) * velocidad * Time.deltaTime, Space.World);
+        transform.Translate(new Vector3(h,v), Space.World);
     }
 }
