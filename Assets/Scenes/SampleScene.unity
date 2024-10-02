@@ -1491,7 +1491,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   direccion: {x: 0, y: 0, z: 0}
-  movimiento: {x: 0, y: 0, z: 0}
   velocidad: 50
 --- !u!1 &1685397260
 GameObject:
@@ -2057,7 +2056,7 @@ PrefabInstance:
     - target: {fileID: 6314430593401323993, guid: c10ef83c1452f6e419009806d2d8f6b8,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -320.5
+      value: -320.8
       objectReference: {fileID: 0}
     - target: {fileID: 6314430593401323993, guid: c10ef83c1452f6e419009806d2d8f6b8,
         type: 3}
