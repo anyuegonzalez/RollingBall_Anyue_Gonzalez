@@ -32,5 +32,5 @@ public class Bola : MonoBehaviour
         }
     }
     // bola en todas las direcciones teclas axis con una fuerza constante, impulse y FORCE
-
+  
 }

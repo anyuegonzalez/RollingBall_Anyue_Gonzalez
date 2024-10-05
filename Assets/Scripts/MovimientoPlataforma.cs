@@ -5,29 +5,38 @@ using UnityEngine;
 public class MovimientoPlataforma : MonoBehaviour
 {
     [SerializeField] float velocidad = 30;
-    [SerializeField] Vector3 direccion;
+   // [SerializeField] Vector3 direccion;
     [SerializeField] int tiempo;
+    [SerializeField] int direccion;
     [SerializeField] float timer = 0;
     void Start()
     {
-       direccion.Normalize();
     
     }
     void Update()
     {
-        if (timer >= 0)
-        {
-            transform.Translate(direccion = new Vector3(12, 0, 0) * velocidad * Time.deltaTime);
-            
-        }
-        if (timer <= 5)
-        {
-            transform.Translate(direccion = new Vector3(12, 0, 0) * -1 * velocidad * Time.deltaTime);
-            timer = 0; 
-        }  
+        Movimiento();
     }
-    void cambioDireccion()
+    void Movimiento()
     {
-        direccion = -direccion;
+        // ACCIONES EN CADA ESTADO
+        if (direccion == 0)
+        {
+            transform.position += new Vector3(velocidad * Time.deltaTime, 0, 0);
+        }
+        else if (direccion == 1)
+        {
+            transform.position += new Vector3(-velocidad * Time.deltaTime, 0, 0);
+        }
+        // CONDICIONES PARA CAMBIAR DE ESTADO
+        if (transform.position.x >= 20)
+        {
+            direccion = 1;
+        }
+        if (transform.position.x <= -20)
+        {
+            direccion = 0;
+        }
+
     }
 }
