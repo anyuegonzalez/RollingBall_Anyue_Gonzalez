@@ -2352,8 +2352,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   velocidad: 15
-  direccion: {x: 14, y: 0, z: 0}
   tiempo: 1
+  direccion: 0
   timer: 5
 --- !u!1 &1987342305
 GameObject:
@@ -2613,7 +2613,7 @@ PrefabInstance:
     - target: {fileID: 6314430593401323993, guid: c10ef83c1452f6e419009806d2d8f6b8,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -259
+      value: -259.7
       objectReference: {fileID: 0}
     - target: {fileID: 6314430593401323993, guid: c10ef83c1452f6e419009806d2d8f6b8,
         type: 3}
