@@ -6,7 +6,9 @@ public class Bola : MonoBehaviour
 {
 
     [SerializeField] Vector3 direccion = new Vector3(0,0,0);
-    [SerializeField] float velocidad = 12f;
+    [SerializeField] float fuerza = 12f;
+    [SerializeField] float fuerzaSalto, velocidad = 7f;  
+    private bool isGrounded = true;
 
     Rigidbody rb;
 
@@ -20,17 +22,26 @@ public class Bola : MonoBehaviour
     {
         float h = Input.GetAxisRaw("Horizontal");
         float v = Input.GetAxisRaw("Vertical");
-        //transform.Translate(new Vector3(h,v), Space.World);
+        Vector3 moveDirection = new Vector3(h, 0, v);
+        transform.position += moveDirection * velocidad * 13 * Time.deltaTime;
         Salto();
 
     }
     void Salto()
     {
-        if(Input.GetKeyDown(KeyCode.Space))
+        float h = Input.GetAxisRaw("Horizontal");
+        float v = Input.GetAxisRaw("Vertical");
+        if (Input.GetKeyDown(KeyCode.Space) && isGrounded )
         {
-            rb.AddForce(direccion * 12, ForceMode.Force);
+            rb.AddForce(Vector3.up * fuerzaSalto, ForceMode.Impulse);
+            isGrounded = false;
         }
     }
-    // bola en todas las direcciones teclas axis con una fuerza constante, impulse y FORCE
-  
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.CompareTag("Ground"))
+        {
+            isGrounded = true; 
+        }
+    }
 }
