@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Bola : MonoBehaviour
 {
-    [SerializeField] int vida = 100;
+    [SerializeField] int vida = 100,puntos;
     [SerializeField] Vector3 direccion = new Vector3(0,0,0);
     [SerializeField] float fuerza = 12f, h, v;
     [SerializeField] float fuerzaSalto = 15f, velocidad = 7f, fuerzaMovimiento =  15f;  
@@ -42,6 +42,7 @@ public class Bola : MonoBehaviour
         if(other.gameObject.CompareTag("Coleccionable"))
         {
             Destroy(other.gameObject);
+            puntos += 50;
         }
         
         if(other.gameObject.CompareTag("Trampa"))
