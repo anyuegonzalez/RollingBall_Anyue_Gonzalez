@@ -39,15 +39,15 @@ public class Bola : MonoBehaviour
     }
     private void OnTriggerEnter(Collider other)
     {
-        if(other.gameObject.tag == "Coleccionable")
+        if(other.gameObject.CompareTag("Coleccionable"))
         {
             Destroy(other.gameObject);
         }
         
-        if(other.gameObject.tag == "Trampa")
+        if(other.gameObject.CompareTag("Trampa"))
         {
             vida -= 10;
-            if(vida < 0)
+            if(vida <= 0)
             {
                 Destroy(this.gameObject);
             }
