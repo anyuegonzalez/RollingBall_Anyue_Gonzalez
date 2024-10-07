@@ -37,4 +37,8 @@ public class Bola : MonoBehaviour
             rb.AddForce(Vector3.up * fuerzaSalto, ForceMode.Impulse);
         }
     }
+    private void OnTriggerEnter(Collider other)
+    {
+        Debug.Log("He atravesado un cubo");
+    }
 }
