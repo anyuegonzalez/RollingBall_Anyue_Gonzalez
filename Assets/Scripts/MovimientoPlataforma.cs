@@ -19,7 +19,7 @@ public class MovimientoPlataforma : MonoBehaviour
     }
     void Movimiento()
     {
-        // ACCIONES EN CADA ESTADO
+       
         if (direccion == 0)
         {
             transform.position += new Vector3(velocidad * Time.deltaTime, 0, 0);
@@ -28,7 +28,7 @@ public class MovimientoPlataforma : MonoBehaviour
         {
             transform.position += new Vector3(-velocidad * Time.deltaTime, 0, 0);
         }
-        // CONDICIONES PARA CAMBIAR DE ESTADO
+    
         if (transform.position.x >= 20)
         {
             direccion = 1;

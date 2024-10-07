@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Bola : MonoBehaviour
 {
-
+    [SerializeField] int vida = 100;
     [SerializeField] Vector3 direccion = new Vector3(0,0,0);
     [SerializeField] float fuerza = 12f, h, v;
     [SerializeField] float fuerzaSalto = 15f, velocidad = 7f, fuerzaMovimiento =  15f;  
@@ -39,6 +39,19 @@ public class Bola : MonoBehaviour
     }
     private void OnTriggerEnter(Collider other)
     {
-        Debug.Log("He atravesado un cubo");
+        if(other.gameObject.tag == "Coleccionable")
+        {
+            Destroy(other.gameObject);
+        }
+        
+        if(other.gameObject.tag == "Trampa")
+        {
+            vida -= 10;
+            if(vida < 0)
+            {
+                Destroy(this.gameObject);
+            }
+        }
+        
     }
 }
