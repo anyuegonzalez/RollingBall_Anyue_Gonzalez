@@ -10,8 +10,8 @@ public class Bola : MonoBehaviour
     [SerializeField] float fuerzaSalto = 15f, velocidad = 7f, fuerzaMovimiento =  15f;  
     private bool isGrounded = true;
     [SerializeField] float distanciaDeteccionSuelo;
-    
-
+    [SerializeField] LayerMask queEsSuelo;
+   
     Rigidbody rb;
 
     void Start()
@@ -32,7 +32,7 @@ public class Bola : MonoBehaviour
     }
     bool DetectarSuelo()
     {
-        bool resultado = Physics.Raycast(transform.position, new Vector3(0, -1, 0), distanciaDeteccionSuelo);
+        bool resultado = Physics.Raycast(transform.position, new Vector3(0, -1, 0), distanciaDeteccionSuelo, queEsSuelo);
         return resultado;
     }
     void Salto()
