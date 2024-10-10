@@ -9,6 +9,7 @@ public class Bola : MonoBehaviour
     [SerializeField] float fuerza = 12f, h, v;
     [SerializeField] float fuerzaSalto = 15f, velocidad = 7f, fuerzaMovimiento =  15f;  
     private bool isGrounded = true;
+    [SerializeField] float distanciaDeteccionSuelo;
     
 
     Rigidbody rb;
@@ -23,18 +24,25 @@ public class Bola : MonoBehaviour
     {
          h = Input.GetAxisRaw("Horizontal");
          v = Input.GetAxisRaw("Vertical");
-
         Salto();
     }
     private void FixedUpdate()
     {
         rb.AddForce(new Vector3(h, 0, v).normalized * fuerzaMovimiento, ForceMode.Force);
     }
+    bool DetectarSuelo()
+    {
+        bool resultado = Physics.Raycast(transform.position, new Vector3(0, -1, 0), distanciaDeteccionSuelo);
+        return resultado;
+    }
     void Salto()
     {
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            rb.AddForce(Vector3.up * fuerzaSalto, ForceMode.Impulse);
+            if(DetectarSuelo() == true)
+            {
+                rb.AddForce(Vector3.up * fuerzaSalto, ForceMode.Impulse);
+            }     
         }
     }
     private void OnTriggerEnter(Collider other)
