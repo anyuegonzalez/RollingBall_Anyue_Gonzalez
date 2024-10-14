@@ -11,12 +11,14 @@ public class Bola : MonoBehaviour
     private bool isGrounded = true;
     [SerializeField] float distanciaDeteccionSuelo;
     [SerializeField] LayerMask queEsSuelo;
+    [SerializeField] AudioClip sonidoMoneda;
+    [SerializeField] AudioManager audioManager; // objeto de clase audioManager
    
     Rigidbody rb;
-
     void Start()
     {
         rb = GetComponent<Rigidbody>();
+        audioManager = GetComponent<AudioManager>();
     }
 
    
@@ -49,6 +51,7 @@ public class Bola : MonoBehaviour
     {
         if(other.gameObject.CompareTag("Coleccionable"))
         {
+            audioManager.ReproducirSonido(sonidoMoneda);
             Destroy(other.gameObject);
             puntos += 50;
         }
