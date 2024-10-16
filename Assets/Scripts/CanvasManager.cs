@@ -1,18 +1,19 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Rendering;
+using UnityEngine.SceneManagement;
 
 public class CanvasManager : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+   public void EmpezarPartida()
+   {
+        // cargo la escena 1
+        SceneManager.LoadScene(1);
+   }
+    public void TerminarPartida()
     {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+      // SOLO FUNCIONA EN EL EJECUTABLE (en unity probando no va a funcionar)
+        Application.Quit();
     }
 }

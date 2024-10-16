@@ -25,9 +25,9 @@ public class MuroCubos : MonoBehaviour
             {
 
                 Time.timeScale = 1f;
-                for (int i = 0; i < 3; i++)
+                for (int i = 0; i < rbs.Length ; i++) // i = 0... 79
                 {
-
+                    rbs[i].useGravity = true;
                 }
 
             }
