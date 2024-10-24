@@ -10,8 +10,17 @@ public class Camaras : MonoBehaviour
     {
         if(other.gameObject.CompareTag("Player"))
         {
-            cam1.SetActive(false);
-            camCenital.SetActive(true);
+            if (cam1.activeSelf)
+            {
+                cam1.SetActive(false);
+                camCenital.SetActive(true);
+
+            }
+            else
+            {
+                cam1.SetActive(true);
+                camCenital.SetActive(false);
+            }
         }
 
     }
