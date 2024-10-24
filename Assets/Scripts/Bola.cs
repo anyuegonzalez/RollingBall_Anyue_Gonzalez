@@ -51,7 +51,7 @@ public class Bola : MonoBehaviour
     {
         if(other.gameObject.CompareTag("Coleccionable"))
         {
-            audioManager.ReproducirSonido(sonidoMoneda);
+            //audioManager.ReproducirSonido(sonidoMoneda);
             Destroy(other.gameObject);
             puntos += 50;
         }
