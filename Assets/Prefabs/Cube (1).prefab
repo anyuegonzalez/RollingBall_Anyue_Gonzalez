@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 637453724964327048}
   m_Layer: 0
   m_Name: Cube (1)
-  m_TagString: Untagged
+  m_TagString: Coleccionable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -30,7 +30,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 5.2, y: 438.1, z: -221.4}
-  m_LocalScale: {x: 12.545991, y: 12.545991, z: 12.545991}
+  m_LocalScale: {x: 2, y: 2, z: 2}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -47,12 +47,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5e7c4a7d136406148b069fcdabda173d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  velocidad: 30
+  velocidad: 4
   direccion: 0
-  temporizador: 0
-  alturaMaxima: 3
-  alturaMinima: 0
-  subiendo: 1
+  alturaMovimiento: 9
+  duracion: 2
 --- !u!33 &3355714838093774239
 MeshFilter:
   m_ObjectHideFlags: 0

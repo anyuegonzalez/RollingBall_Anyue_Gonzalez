@@ -47,6 +47,7 @@ public class Bola : MonoBehaviour
             }     
         }
     }
+    
     private void OnTriggerEnter(Collider other)
     {
         if(other.gameObject.CompareTag("Coleccionable"))
@@ -55,7 +56,10 @@ public class Bola : MonoBehaviour
             Destroy(other.gameObject);
             puntos += 50;
         }
-        
+        if(other.gameObject.CompareTag("Muro"))
+        {
+            puntos += 5;
+        }
         if(other.gameObject.CompareTag("Trampa"))
         {
             vida -= 10;
