@@ -10,20 +10,6 @@ public class GameManager : MonoBehaviour
     public static GameManager instance;
     void Start()
     {
-        /*
-        // INICIALIZACIÓN SINGLETON
-        if (instance == null)
-        {
-            instance = this;
-        }
-        else if (instance != this)
-        {
-            Destroy(gameObject);
-        }
-
-        // NO DESTRUIRME ENTRE ESCENAS  
-        DontDestroyOnLoad(gameObject);
-        */
         canvasPausa.SetActive(false);
     }
     void Update()

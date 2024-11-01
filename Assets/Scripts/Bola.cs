@@ -57,7 +57,13 @@ public class Bola : MonoBehaviour
             Destroy(other.gameObject);
             puntos += 50;
         }
-        if(other.gameObject.CompareTag("Muro"))
+        if (other.gameObject.CompareTag("ColeccionableBoss"))
+        {
+            //audioManager.ReproducirSonido(sonidoMoneda);
+            Destroy(other.gameObject);
+            puntos += 500;
+        }
+        if (other.gameObject.CompareTag("Muro"))
         {
             puntos += 5;
         }
