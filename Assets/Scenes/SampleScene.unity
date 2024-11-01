@@ -4156,26 +4156,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Cube (1)
       objectReference: {fileID: 0}
-    - target: {fileID: 4426663180112129916, guid: c10ef83c1452f6e419009806d2d8f6b8,
-        type: 3}
-      propertyPath: m_TagString
-      value: Coleccionable
-      objectReference: {fileID: 0}
-    - target: {fileID: 6314430593401323993, guid: c10ef83c1452f6e419009806d2d8f6b8,
-        type: 3}
-      propertyPath: m_LocalScale.x
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 6314430593401323993, guid: c10ef83c1452f6e419009806d2d8f6b8,
-        type: 3}
-      propertyPath: m_LocalScale.y
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 6314430593401323993, guid: c10ef83c1452f6e419009806d2d8f6b8,
-        type: 3}
-      propertyPath: m_LocalScale.z
-      value: 2
-      objectReference: {fileID: 0}
     - target: {fileID: 6314430593401323993, guid: c10ef83c1452f6e419009806d2d8f6b8,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -4948,7 +4928,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: 8a133399f5757ae48bb420bbd15b110a, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1

@@ -19,6 +19,7 @@ public class Bola : MonoBehaviour
     {
         rb = GetComponent<Rigidbody>();
         audioManager = GetComponent<AudioManager>();
+        //sonidoMoneda = GetComponent<AudioClip>();
     }
 
    
