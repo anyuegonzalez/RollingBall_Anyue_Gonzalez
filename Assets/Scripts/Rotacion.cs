@@ -34,7 +34,7 @@ public class Rotacion : MonoBehaviour
         }
         float mov = temporizador / duracion;
 
-        float nuevaY = posicionInicial.y + Mathf.PingPong(Time.time * velocidad, alturaMovimiento);
+        float nuevaY = posicionInicial.y + Mathf.PingPong(Time.time * velocidad, alturaMovimiento); // esta linea es para mov ciclicos de un objeto
         transform.position = new Vector3(posicionInicial.x, nuevaY, posicionInicial.z);
 
     }
