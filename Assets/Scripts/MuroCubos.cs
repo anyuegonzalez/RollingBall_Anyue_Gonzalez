@@ -5,6 +5,7 @@ using UnityEngine;
 public class MuroCubos : MonoBehaviour
 {
     [SerializeField] private Rigidbody[] rbs;
+    [SerializeField] GameObject manager;
 
     private float timer = 0f;
     private bool iniciarCuenta = false;
@@ -18,7 +19,7 @@ public class MuroCubos : MonoBehaviour
     void Update()
     {
         
-        if (iniciarCuenta)
+        if (iniciarCuenta) 
         {
             timer += 1 * Time.unscaledDeltaTime;
             if(timer >= 2)
@@ -40,6 +41,13 @@ public class MuroCubos : MonoBehaviour
         {
             Time.timeScale = 0.3f;
             iniciarCuenta = true;
+        }
+    }
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (gameObject.CompareTag("Player"))
+        {
+            manager.GetComponent<Bola>().Puntos += 5;
         }
     }
 }

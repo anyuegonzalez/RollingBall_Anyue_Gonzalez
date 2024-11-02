@@ -15,6 +15,9 @@ public class Bola : MonoBehaviour
     [SerializeField] AudioManager audioManager; // objeto de clase audioManager
    
     Rigidbody rb;
+
+    public int Puntos { get => puntos; set => puntos = value; }
+
     void Start()
     {
         rb = GetComponent<Rigidbody>();
@@ -62,10 +65,6 @@ public class Bola : MonoBehaviour
             //audioManager.ReproducirSonido(sonidoMoneda);
             Destroy(other.gameObject);
             puntos += 500;
-        }
-        if (other.gameObject.CompareTag("Muro"))
-        {
-            puntos += 5;
         }
         if(other.gameObject.CompareTag("Trampa"))
         {
