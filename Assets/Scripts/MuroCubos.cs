@@ -14,8 +14,6 @@ public class MuroCubos : MonoBehaviour
     {
         
     }
-
-    
     void Update()
     {
         
@@ -43,11 +41,5 @@ public class MuroCubos : MonoBehaviour
             iniciarCuenta = true;
         }
     }
-    private void OnCollisionEnter(Collision collision)
-    {
-        if (gameObject.CompareTag("Player"))
-        {
-            manager.GetComponent<Bola>().Puntos += 5;
-        }
-    }
+   
 }
