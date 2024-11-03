@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class Bola : MonoBehaviour
 {
@@ -13,7 +14,10 @@ public class Bola : MonoBehaviour
     [SerializeField] LayerMask queEsSuelo;
     [SerializeField] AudioClip sonidoMoneda;
     [SerializeField] AudioManager audioManager; // objeto de clase audioManager
-   
+    [SerializeField] TMP_Text Texto_puntuacion;
+
+
+
     Rigidbody rb;
 
     public int Puntos { get => puntos; set => puntos = value; }
@@ -30,6 +34,7 @@ public class Bola : MonoBehaviour
     {
          h = Input.GetAxisRaw("Horizontal");
          v = Input.GetAxisRaw("Vertical");
+        Texto_puntuacion.text = "Puntuacion; " + puntos;
         Salto();
     }
     private void FixedUpdate()
@@ -58,7 +63,7 @@ public class Bola : MonoBehaviour
         {
             //audioManager.ReproducirSonido(sonidoMoneda);
             Destroy(other.gameObject);
-            puntos += 50;
+            puntos += 20;
         }
         if (other.gameObject.CompareTag("ColeccionableBoss"))
         {
