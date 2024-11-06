@@ -9,6 +9,9 @@ TagManager:
   - Trampa
   - Muro
   - ColeccionableBoss
+  - pocionVerde
+  - pocionRoja
+  - pocionAzul
   layers:
   - Default
   - TransparentFX
