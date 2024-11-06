@@ -56,7 +56,40 @@ public class Bola : MonoBehaviour
             }     
         }
     }
-    
+   /* void ColorTimer()
+    {
+        if (timerColor > 0)
+        {
+            timerColor -= Time.deltaTime;
+            if (timerColor <= 0)
+            {
+                sr.color = Color.white;
+            }
+        }
+    }*/
+    /*void SaltoTimer()
+    {
+        if (timerSalto > 0)
+        {
+            timerSalto -= Time.deltaTime;
+            if (timerSalto <= 0)
+            {
+                fuerzaSalto = 4;
+            }
+        }
+    }*/
+    void Sanacion()
+    {
+        if (vida <= 100)
+        {
+            vida = +10;
+        }
+        else if( vida >= 100)
+        {
+            vida -= 50;
+        }
+    }
+
     private void OnTriggerEnter(Collider other)
     {
         if(other.gameObject.CompareTag("Coleccionable"))
