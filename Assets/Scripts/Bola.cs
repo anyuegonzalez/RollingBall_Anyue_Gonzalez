@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using System.Threading;
 
 public class Bola : MonoBehaviour
 {
@@ -15,6 +16,9 @@ public class Bola : MonoBehaviour
     [SerializeField] AudioClip sonidoMoneda;
     [SerializeField] AudioManager audioManager; // objeto de clase audioManager
     [SerializeField] TMP_Text Texto_puntuacion;
+
+    private float timerColor;
+    private SpriteRenderer sr;
 
 
 
@@ -78,17 +82,6 @@ public class Bola : MonoBehaviour
             }
         }
     }*/
-    void Sanacion()
-    {
-        if (vida <= 100)
-        {
-            vida = +10;
-        }
-        else if( vida >= 100)
-        {
-            vida -= 50;
-        }
-    }
 
     private void OnTriggerEnter(Collider other)
     {
@@ -97,6 +90,20 @@ public class Bola : MonoBehaviour
             //audioManager.ReproducirSonido(sonidoMoneda);
             Destroy(other.gameObject);
             puntos += 20;
+        }
+        if (other.gameObject.CompareTag("pocionRoja"))
+        {
+
+            Destroy(other.gameObject);
+            if (timerColor > 0)
+            {
+                timerColor -= Time.deltaTime;
+                if (timerColor <= 0)
+                {
+                    sr.color = Color.white;
+                }
+            }
+
         }
         if (other.gameObject.CompareTag("ColeccionableBoss"))
         {

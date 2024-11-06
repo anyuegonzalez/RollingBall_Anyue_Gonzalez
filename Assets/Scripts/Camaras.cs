@@ -5,7 +5,7 @@ using UnityEngine;
 public class Camaras : MonoBehaviour
 {
     [SerializeField] private GameObject cam1;
-    [SerializeField] private GameObject camCenital;
+    //[SerializeField] private GameObject camVoltear;
     private void OnTriggerEnter(Collider other)
     {
         if(other.gameObject.CompareTag("Player"))
@@ -13,13 +13,13 @@ public class Camaras : MonoBehaviour
             if (cam1.activeSelf)
             {
                 cam1.SetActive(false);
-                camCenital.SetActive(true);
+                //camVoltear.SetActive(true);
 
             }
             else
             {
                 cam1.SetActive(true);
-                camCenital.SetActive(false);
+               // camVoltear.SetActive(false);
             }
         }
 
