@@ -5,16 +5,11 @@ using UnityEngine;
 public class MuroCubos : MonoBehaviour
 {
     [SerializeField] private Rigidbody[] rbs;
-    [SerializeField] GameObject manager;
     [SerializeField] float temporizador;
 
     private float timer = 0f;
     private bool iniciarCuenta = false;
  
-    void Start()
-    {
-        
-    }
     void Update()
     {
         
