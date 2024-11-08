@@ -6,6 +6,7 @@ public class MuroCubos : MonoBehaviour
 {
     [SerializeField] private Rigidbody[] rbs;
     [SerializeField] GameObject manager;
+    [SerializeField] float temporizador;
 
     private float timer = 0f;
     private bool iniciarCuenta = false;
@@ -37,7 +38,7 @@ public class MuroCubos : MonoBehaviour
     {
         if(other.gameObject.CompareTag("Player"))
         {
-            Time.timeScale = 0.3f;
+            Time.timeScale = temporizador;
             iniciarCuenta = true;
         }
     }

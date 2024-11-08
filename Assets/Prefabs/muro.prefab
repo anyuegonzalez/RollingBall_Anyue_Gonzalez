@@ -3336,6 +3336,7 @@ GameObject:
   - component: {fileID: 273905107537907003}
   - component: {fileID: 6364119357913298390}
   - component: {fileID: 1486114013182944042}
+  - component: {fileID: 2368249703056644711}
   m_Layer: 0
   m_Name: muro
   m_TagString: Muro
@@ -3423,8 +3424,68 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1a8e7472edd1c6c47a7cdb5c121cdd1b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rbs: []
+  rbs:
+  - {fileID: 7872085143193026008}
+  - {fileID: 3830728676414682037}
+  - {fileID: 4294242122370135520}
+  - {fileID: 1473201990303670831}
+  - {fileID: 7955531639687743576}
+  - {fileID: 8612678307405617437}
+  - {fileID: 9194123680552626006}
+  - {fileID: 3677298070068342152}
+  - {fileID: 2495265596157929595}
+  - {fileID: 3369033294603089180}
+  - {fileID: 4034623940538335241}
+  - {fileID: 5032858676809353345}
+  - {fileID: 3556886946564119159}
+  - {fileID: 5056865079690742507}
+  - {fileID: 2669241830794220227}
+  - {fileID: 8145435506159195291}
+  - {fileID: 1922615355611384377}
+  - {fileID: 6623902371894667233}
+  - {fileID: 8612440228805611540}
+  - {fileID: 7413883316598699129}
+  - {fileID: 4252250500538766390}
+  - {fileID: 7105358278261834889}
+  - {fileID: 6954756665576950542}
+  - {fileID: 1005845174835523412}
+  - {fileID: 3285677708041338512}
+  - {fileID: 7865531366091282725}
+  - {fileID: 4709028741442042085}
+  - {fileID: 2507607361374611851}
+  - {fileID: 5292083608554499840}
+  - {fileID: 8038140803082971622}
+  - {fileID: 1382931318780173665}
+  - {fileID: 7869813239076363689}
   manager: {fileID: 0}
+  temporizador: 0.5
+--- !u!54 &2368249703056644711
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6405333834397706747}
+  serializedVersion: 4
+  m_Mass: 0.01
+  m_Drag: 0
+  m_AngularDrag: 0
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 126
+  m_CollisionDetection: 0
 --- !u!1 &6426150579839839439
 GameObject:
   m_ObjectHideFlags: 0
