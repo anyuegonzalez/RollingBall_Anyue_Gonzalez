@@ -12,6 +12,7 @@ TagManager:
   - pocionVerde
   - pocionRoja
   - pocionAzul
+  - Muerte
   layers:
   - Default
   - TransparentFX

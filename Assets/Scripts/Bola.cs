@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 using System.Threading;
+using UnityEngine.SceneManagement;
 
 public class Bola : MonoBehaviour
 {
@@ -29,7 +30,7 @@ public class Bola : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody>();
-        audioManager = GetComponent<AudioManager>();
+        //audioManager = GetComponent<AudioManager>();
         //sonidoMoneda = GetComponent<AudioClip>();
     }
 
@@ -85,26 +86,12 @@ public class Bola : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if(other.gameObject.CompareTag("Coleccionable"))
+        /*if(other.gameObject.CompareTag("Coleccionable"))
         {
-            //audioManager.ReproducirSonido(sonidoMoneda);
+            //audioManager.ReproducirSonido(sonidoMoneda); no funciona esta linea y ns por que
             Destroy(other.gameObject);
             puntos += 20;
-        }
-        if (other.gameObject.CompareTag("pocionRoja"))
-        {
-
-            Destroy(other.gameObject);
-            if (timerColor > 0)
-            {
-                timerColor -= Time.deltaTime;
-                if (timerColor <= 0)
-                {
-                    sr.color = Color.white;
-                }
-            }
-
-        }
+        }*/
         if (other.gameObject.CompareTag("ColeccionableBoss"))
         {
             //audioManager.ReproducirSonido(sonidoMoneda);
@@ -119,6 +106,20 @@ public class Bola : MonoBehaviour
                 Destroy(this.gameObject);
             }
         }
-        
+        if (other.gameObject.CompareTag("Muerte"))
+        {
+            Destroy(this.gameObject);
+            SceneManager.LoadScene(1);
+        }
+
+    }
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.gameObject.CompareTag("Coleccionable"))
+        {
+            audioManager.ReproducirSonido(sonidoMoneda);
+            Destroy(other.gameObject);
+            puntos += 20;
+        }
     }
 }

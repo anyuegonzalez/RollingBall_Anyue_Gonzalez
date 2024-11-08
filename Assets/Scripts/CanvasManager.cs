@@ -16,4 +16,5 @@ public class CanvasManager : MonoBehaviour
       // SOLO FUNCIONA EN EL EJECUTABLE (en unity probando no va a funcionar)
         Application.Quit();
     }
+    
 }

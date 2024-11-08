@@ -5,23 +5,29 @@ using UnityEngine;
 public class Camaras : MonoBehaviour
 {
     [SerializeField] private GameObject cam1;
-    //[SerializeField] private GameObject camVoltear;
+    [SerializeField] private GameObject camTop;
+    private void Start()
+    {
+        camTop.SetActive(false);
+    }
     private void OnTriggerEnter(Collider other)
     {
         if(other.gameObject.CompareTag("Player"))
         {
-            if (cam1.activeSelf)
-            {
-                cam1.SetActive(false);
-                //camVoltear.SetActive(true);
 
-            }
-            else
-            {
-                cam1.SetActive(true);
-               // camVoltear.SetActive(false);
-            }
+                cam1.SetActive(false);
+                camTop.SetActive(true);
         }
 
+    }
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.gameObject.CompareTag("Player"))
+        {
+            cam1.SetActive(true);
+            camTop.SetActive(false);
+
+        }
+        
     }
 }
