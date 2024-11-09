@@ -10,7 +10,7 @@ public class GameManager : MonoBehaviour
     public static GameManager instance;
 
     [SerializeField] int puntosJugador = 0;
-    [SerializeField] int puntosObjetivo = 1000;
+    [SerializeField] int puntosObjetivo = 500;
     void Start()
     {
         canvasPausa.SetActive(false);
