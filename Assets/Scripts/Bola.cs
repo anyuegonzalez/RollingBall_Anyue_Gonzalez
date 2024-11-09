@@ -75,7 +75,7 @@ public class Bola : MonoBehaviour
         }
         if(other.gameObject.CompareTag("Trampa"))
         {
-            vida -= 20;
+            vida -= 25;
             Destroy(other.gameObject);
             if(vida <= 0)
             {
