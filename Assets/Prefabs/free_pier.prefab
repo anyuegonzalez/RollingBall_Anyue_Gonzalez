@@ -76,7 +76,7 @@ GameObject:
   - component: {fileID: 1459035837108634929}
   - component: {fileID: 2836560716199834681}
   - component: {fileID: 4104514394300622202}
-  - component: {fileID: 266383662259487796}
+  - component: {fileID: 203280960856031023}
   m_Layer: 0
   m_Name: Mesh1
   m_TagString: Untagged
@@ -177,9 +177,9 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 5.32, y: -0.29, z: 8.26}
-  m_Center: {x: -2.64, y: 1.86, z: -2.47}
---- !u!65 &266383662259487796
+  m_Size: {x: 15.62, y: 0.26, z: 9.3}
+  m_Center: {x: 0, y: 1.23, z: 0}
+--- !u!65 &203280960856031023
 BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -198,5 +198,5 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 2.2, y: -0.28, z: 0.38}
-  m_Center: {x: 1.75, y: 0.91, z: -6.15}
+  m_Size: {x: 19.23, y: 0.09, z: 4.45}
+  m_Center: {x: 0, y: 3.11, z: 0}

@@ -18,6 +18,7 @@ public class Bola : MonoBehaviour
     [SerializeField] AudioManager audioManager; // objeto de clase audioManager
     [SerializeField] TMP_Text Texto_puntuacion;
     [SerializeField] TMP_Text Texto_vidas;
+    [SerializeField] private float timerSalto;
 
     private float timerColor;
     private SpriteRenderer sr;
@@ -81,11 +82,19 @@ public class Bola : MonoBehaviour
                 Destroy(this.gameObject);
             }
         }
+        if (other.gameObject.CompareTag("pocionVerde"))
+        {
+           
+            Destroy(other.gameObject);
+            fuerzaSalto *= 20f;
+            timerSalto = 15f;
+        }
         if (other.gameObject.CompareTag("Muerte"))
         {
             Destroy(this.gameObject);
             SceneManager.LoadScene(1);
         }
+
 
     }
     private void OnTriggerExit(Collider other)
