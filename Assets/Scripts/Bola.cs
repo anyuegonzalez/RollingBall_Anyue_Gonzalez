@@ -17,6 +17,7 @@ public class Bola : MonoBehaviour
     [SerializeField] AudioClip sonidoMoneda;
     [SerializeField] AudioManager audioManager; // objeto de clase audioManager
     [SerializeField] TMP_Text Texto_puntuacion;
+    [SerializeField] TMP_Text Texto_vidas;
 
     private float timerColor;
     private SpriteRenderer sr;
@@ -30,8 +31,7 @@ public class Bola : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody>();
-        //audioManager = GetComponent<AudioManager>();
-        //sonidoMoneda = GetComponent<AudioClip>();
+       
     }
 
    
@@ -40,6 +40,7 @@ public class Bola : MonoBehaviour
          h = Input.GetAxisRaw("Horizontal");
          v = Input.GetAxisRaw("Vertical");
         Texto_puntuacion.text = "Puntuacion; " + puntos;
+        Texto_vidas.text = "Vidas; " + vida;
         Salto();
     }
     private void FixedUpdate()
@@ -61,40 +62,13 @@ public class Bola : MonoBehaviour
             }     
         }
     }
-   /* void ColorTimer()
-    {
-        if (timerColor > 0)
-        {
-            timerColor -= Time.deltaTime;
-            if (timerColor <= 0)
-            {
-                sr.color = Color.white;
-            }
-        }
-    }*/
-    /*void SaltoTimer()
-    {
-        if (timerSalto > 0)
-        {
-            timerSalto -= Time.deltaTime;
-            if (timerSalto <= 0)
-            {
-                fuerzaSalto = 4;
-            }
-        }
-    }*/
 
     private void OnTriggerEnter(Collider other)
     {
-        /*if(other.gameObject.CompareTag("Coleccionable"))
-        {
-            //audioManager.ReproducirSonido(sonidoMoneda); no funciona esta linea y ns por que
-            Destroy(other.gameObject);
-            puntos += 20;
-        }*/
+        
         if (other.gameObject.CompareTag("ColeccionableBoss"))
         {
-            //audioManager.ReproducirSonido(sonidoMoneda);
+            audioManager.ReproducirSonido(sonidoMoneda);
             Destroy(other.gameObject);
             puntos += 500;
         }
