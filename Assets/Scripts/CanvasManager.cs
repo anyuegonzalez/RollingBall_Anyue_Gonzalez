@@ -25,7 +25,7 @@ public class CanvasManager : MonoBehaviour
     public void Reintentar()
     {
         Time.timeScale = 1f;
-        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        SceneManager.LoadScene("RollingBall");
     }
 
 }
