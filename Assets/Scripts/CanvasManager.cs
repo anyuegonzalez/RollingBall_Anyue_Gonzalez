@@ -12,16 +12,6 @@ public class CanvasManager : MonoBehaviour
     {
         Texto_Muerte.text = "Has muerto";
     }
-    public void EmpezarPartida()
-    {
-        // cargo la escena 1
-        SceneManager.LoadScene(1);
-    }
-    public void TerminarPartida()
-    {
-      // SOLO FUNCIONA EN EL EJECUTABLE (en unity probando no va a funcionar)
-        Application.Quit();
-    }
     public void Reintentar()
     {
         Time.timeScale = 1f;

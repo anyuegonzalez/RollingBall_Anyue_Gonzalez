@@ -59,4 +59,5 @@ public class GameManager : MonoBehaviour
     {
         Debug.Log("¡Has alcanzado los puntos objetivo! Cerrando el juego...");
         Application.Quit();
-}   }
+    }
+}   
