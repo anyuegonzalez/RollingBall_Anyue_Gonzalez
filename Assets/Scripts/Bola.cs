@@ -92,7 +92,7 @@ public class Bola : MonoBehaviour
         if (other.gameObject.CompareTag("Muerte"))
         {
             Destroy(this.gameObject);
-            SceneManager.LoadScene(1);
+            SceneManager.LoadScene(2);
         }
 
 
