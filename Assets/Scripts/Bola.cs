@@ -70,12 +70,6 @@ public class Bola : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         
-        if (other.gameObject.CompareTag("ColeccionableBoss"))
-        {
-            audioManager.ReproducirSonido(sonidoMoneda);
-            Destroy(other.gameObject);
-            puntosJugador += 500;
-        }
         if(other.gameObject.CompareTag("Trampa"))
         {
             vida -= 25;
@@ -107,6 +101,12 @@ public class Bola : MonoBehaviour
             audioManager.ReproducirSonido(sonidoMoneda);
             Destroy(other.gameObject);
             puntosJugador += 20;
+        }
+        if (other.gameObject.CompareTag("ColeccionableBoss"))
+        {
+            audioManager.ReproducirSonido(sonidoMoneda);
+            Destroy(other.gameObject);
+            puntosJugador += 500;
         }
     }
 }
