@@ -7,7 +7,8 @@ using UnityEngine.SceneManagement;
 
 public class Bola : MonoBehaviour
 {
-    [SerializeField] int vida = 100,puntos;
+    public int puntosJugador;
+    [SerializeField] int vida = 100;
     [SerializeField] Vector3 direccion = new Vector3(0,0,0);
     [SerializeField] float fuerza = 12f, h, v;
     [SerializeField] float fuerzaSalto = 15f, velocidad = 7f, fuerzaMovimiento =  15f;  
@@ -19,6 +20,7 @@ public class Bola : MonoBehaviour
     [SerializeField] TMP_Text Texto_puntuacion;
     [SerializeField] TMP_Text Texto_vidas;
     [SerializeField] private float timerSalto;
+    
 
     private float timerColor;
     private SpriteRenderer sr;
@@ -27,7 +29,8 @@ public class Bola : MonoBehaviour
 
     Rigidbody rb;
 
-    public int Puntos { get => puntos; set => puntos = value; }
+    public int Puntos { get => puntosJugador; set => puntosJugador = value; }
+    public int PuntosJugador { get => puntosJugador; set => puntosJugador = value; }
 
     void Start()
     {
@@ -40,7 +43,7 @@ public class Bola : MonoBehaviour
     {
          h = Input.GetAxisRaw("Horizontal");
          v = Input.GetAxisRaw("Vertical");
-        Texto_puntuacion.text = "Puntuacion; " + puntos;
+        Texto_puntuacion.text = "Puntuacion; " + puntosJugador;
         Texto_vidas.text = "Vidas; " + vida;
         Salto();
     }
@@ -71,7 +74,7 @@ public class Bola : MonoBehaviour
         {
             audioManager.ReproducirSonido(sonidoMoneda);
             Destroy(other.gameObject);
-            puntos += 500;
+            puntosJugador += 500;
         }
         if(other.gameObject.CompareTag("Trampa"))
         {
@@ -86,7 +89,7 @@ public class Bola : MonoBehaviour
         {
            
             Destroy(other.gameObject);
-            fuerzaSalto *= 20f;
+            fuerzaSalto *= 2.9f;
             timerSalto = 15f;
         }
         if (other.gameObject.CompareTag("Muerte"))
@@ -103,7 +106,7 @@ public class Bola : MonoBehaviour
         {
             audioManager.ReproducirSonido(sonidoMoneda);
             Destroy(other.gameObject);
-            puntos += 20;
+            puntosJugador += 20;
         }
     }
 }

@@ -7,19 +7,19 @@ public class GameManager : MonoBehaviour
 {
     public GameObject canvasPausa;
     public static int nivelJuego = 0;
-    public static GameManager instance;
+    public Bola bola;
 
-    [SerializeField] int puntosJugador = 0;
     [SerializeField] int puntosObjetivo = 500;
     void Start()
-    {
+    { 
         canvasPausa.SetActive(false);
     }
     void Update()
+        
     {
-        if (puntosJugador >= puntosObjetivo)
+        if (bola != null && bola.puntosJugador >= puntosObjetivo)
         {
-            CerrarJuego();
+            SceneManager.LoadScene(3); 
         }
         if (Input.GetKeyDown(KeyCode.Escape))
         {
@@ -55,9 +55,5 @@ public class GameManager : MonoBehaviour
         print("cerrando...");
         Application.Quit();
     }
-    void CerrarJuego()
-    {
-        Debug.Log("¡Has alcanzado los puntos objetivo! Cerrando el juego...");
-        Application.Quit();
-    }
+    
 }   
