@@ -9,7 +9,7 @@ public class GameManager : MonoBehaviour
     public static int nivelJuego = 0;
     public Bola bola;
 
-    [SerializeField] int puntosObjetivo = 500;
+    [SerializeField] int puntosObjetivo = 50;
     void Start()
     { 
         canvasPausa.SetActive(false);
